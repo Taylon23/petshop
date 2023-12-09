@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>Adicionar anuncio</title>
+{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/form_delete_animal.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="info-delete">
+    <h1>Confirmação de exclusão</h1>
+    <p>Você está prestes a excluir o anuncio do seu animal: {{ object.nome }}</p>
+</div>
+
+<!-- Exibir a imagem existente -->
+<div class="img_animal">
+    <img src="{{ object_img_url }}" alt="Imagem do animal">
+</div>
+<form method="post" enctype="multipart/form-data" class="form-adicionar-animal">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.nome.label_tag }}
+        {{ form.nome }}
+    </div>
+    <div class="form-group">
+        {{ form.idade.label_tag }}
+        {{ form.idade }}
+    </div>
+    <div class="form-group">
+        {{ form.raca.label_tag }}
+        {{ form.raca }}
+    </div>
+    <div class="form-group">
+        {{ form.animal.label_tag }}
+        {{ form.animal }}
+    </div>
+    <div class="form-group">
+        <label for="id_observacao">Observação:</label>
+        {{ form.observacao }}
+    </div>
+    <button><i class="fas fa-trash"></i> Deletar</button>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Captura o evento de alteração no campo de entrada de arquivo
+    document.getElementById('img_animal_input').addEventListener('change', function (event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const preview = document.getElementById('img_preview');
+                preview.style.display = 'block';
+                preview.src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    });
+</script>
+{% endblock %}

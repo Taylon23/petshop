@@ -1,0 +1,105 @@
+.form-adicionar-animal button {
+  color: #f00;
+}
+.form-adicionar-animal button:hover {
+  opacity: 90%;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.8em;
+  margin: 1em 0;
+  padding: 0.5em;
+}
+.info-delete {
+  text-align: center;
+}
+.form-adicionar-animal {
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 0 0.25em 0.5em #0000001a;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.img_animal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.img_animal img {
+  max-width: 200px;
+  max-height: 200px;
+}
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  color: #333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Quando o usuário passa o mouse por cima do campo */
+.form-group input[type="file"]:hover {
+  border-color: #aaa;
+}
+
+/* Estilo para quando o campo está focado */
+.form-group input[type="file"]:focus {
+  outline: none;
+  border-color: #5b9dd9;
+  box-shadow: 0 0 5px rgba(91, 157, 217, 0.5);
+}
+
+.form-adicionar-animal textarea {
+  width: 100%;
+  resize: none;
+}
+
+.form-adicionar-animal button {
+  background-color: #f00;
+  color: #fff;
+  padding: 0.9375em 1.5625em;
+  border: none;
+  border-radius: 0.25em;
+  cursor: pointer;
+  font-size: 1.125em;
+  width: 100%;
+  margin: 0.3em 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.form-adicionar-animal button:hover {
+  opacity: 90%;
+}
+
+@media screen and (max-width: 768px) {
+  .form-adicionar-animal {
+    width: 100%;
+  }
+}

@@ -1,0 +1,48 @@
+<!-- Seu template meus_anuncios.html -->
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>Meus Anúncios</title>
+{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/meus_anuncios.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="section-meus-anuncios">
+    <div class="title-section">
+        <h1>Meus Anúncios</h1>
+    </div>
+    <div class="content-anuncio">
+        {% for anuncio in page_obj %}
+        <a href="">
+            <div class="anuncio">
+                <img src="{{ anuncio.img_animal.url }}" alt="{{ anuncio.nome }}">
+                <h3>{{ anuncio.nome }}</h3>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+<div class="pagination">
+    <div class="pagination">
+        <div class="step-links">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+            {% endif %}
+
+            <span class="current">
+                Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Próxima</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

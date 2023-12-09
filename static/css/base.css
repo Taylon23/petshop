@@ -73,7 +73,7 @@ a {
   display: none;
   position: absolute;
   z-index: 999;
-  right: 15%;
+  right: 40%;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -153,6 +153,7 @@ main {
   .submenu-responsive {
     display: none; /* Esconder o submenu por padrão */
     position: absolute;
+    z-index: 999;
     width: 100%;
     background-color: #fff;
     color: #000;
@@ -176,7 +177,7 @@ main {
     text-align: center;
     cursor: pointer;
     font-size: 14px;
-    padding: 0.5em;
+    padding: 0.6em;
     width: 100%;
   }
 
@@ -204,7 +205,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 0.5em;
+    margin: .5em;
     width: 100%;
   }
   .form-input-topo-responsive input[type="text"] {

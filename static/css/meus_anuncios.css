@@ -1,0 +1,77 @@
+.section-meus-anuncios h1 {
+  margin: 0.1em;
+}
+.title-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+}
+.content-anuncio {
+  display: flex;
+  gap: 0 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0.5em;
+}
+.content-anuncio a {
+  color: #000;
+}
+.anuncio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5em 0;
+  margin: 0.5em 0;
+}
+.anuncio h3 {
+  white-space: nowrap;
+}
+.anuncio img {
+  border-radius: 0.5em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 15em;
+  height: 15em;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+.anuncio img:hover {
+  transform: scale(1.02);
+  filter: brightness(80%);
+}
+.pagination {
+  height: 5em;
+  margin-bottom: .5em;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.content-paginator {
+  display: flex;
+  align-items: center;
+}
+.step-links a {
+  padding: 5px 10px;
+  margin: 0 5px;
+  color: #000;
+  border: 1px solid #005859;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.step-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.step-links a:hover {
+  color: #fff;
+  background-color: #005859;
+}

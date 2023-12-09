@@ -1,5 +1,6 @@
 from django.db import models
 from . import choices
+from django.contrib.auth.models import User
 from django.db.models.signals import pre_delete
 from django.dispatch import receiver
 from django.utils import timezone
@@ -23,10 +24,8 @@ class TipoAnimal(models.Model):
         self.tipo_animal= self.tipo_animal.capitalize()
         super(TipoAnimal, self).save(*args, **kwargs)
     
-    
-    
-    
 class Animal(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
     img_animal = models.ImageField(upload_to='img_animal/', verbose_name='imagem do animal')
     nome = models.CharField(max_length=50, default='Sem nome')
     raca = models.ForeignKey(RacaAnimal, verbose_name='raça',default='SRD (Sem Raça Definida)', on_delete=models.CASCADE)
@@ -34,6 +33,7 @@ class Animal(models.Model):
     sexo = models.CharField(max_length=1, choices=choices.SEXO_ANIMAL_CHOICES, verbose_name='sexo')
     idade = models.IntegerField()
     data_criacao = models.DateField(auto_now_add=True)
+    observacao = models.TextField(default='sem observações')
     destaque = models.BooleanField(default=False)
     
     def __str__(self):
