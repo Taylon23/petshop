@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <!-- Titulo da pagina -->
+    {% block title%}
+    {% endblock %}
+    <!-- Link Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- Link Fontawesomefree -->
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <!-- Links extras -->
+    {% block extra_head %}
+    {% endblock %}
+</head>
+
+<body>
+    {% block navbar %}
+    <header>
+        <nav class="NavBar">
+            <a href="">
+                <h1>Logomarca</h1>
+            </a>
+            <form action="" method="GET" class="form-input-topo">
+                <input type="text" name="q" id="buscar-animal" placeholder="Pesquisar animais" required>
+                <datalist id="animais">
+                    <option value="sem animal">
+                </datalist>
+                <button type="submit" id="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <ul class="ul-menu-topo">
+                <li><a href=""><i class="fas fa-dog"></i> Animais</a>
+                    <ul class="submenu-animais">
+                        {% for animal in tipos_animais|dictsort:"tipo_animal" %}
+                        <a href="#">
+                            <li>{{ animal.tipo_animal }}</li>
+                        </a>
+                        {% empty %}
+                        <li>Não há animais</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li><a href=""><i class="fas fa-heart"></i>
+                        Meus pets favoritos</a></li>
+                <li><a href=""><i class="fas fa-plus-circle"></i>
+                        Adicionar Anúcio</a></li>
+            </ul>
+            <ul class="menu-responsive">
+                <li id="menu-bars"><i class="fas fa-bars"></i>
+                    <ul class="submenu-responsive">
+                        <li><i class="fas fa-dog"></i> Animais
+                            <ul class="submenu-animais">
+                                <a href="">
+                                    <li>Animal</li>
+                                </a>
+                            </ul>
+                        </li>
+                        <a href="">
+                            <li><i class="fas fa-heart"></i> Meus pets favoritos</li>
+                        </a>
+                        <a href="">
+                            <li><i class="fas fa-envelope"></i>Sobre nós</li>
+                        </a>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <form action="" method="GET" class="form-input-topo-responsive">
+            <input type="text" id="buscar-animal" placeholder="Pesquisar Animal" required>
+            <datalist id="livros">
+                <option value="Sem Animal">
+            </datalist>
+            <button type="submit" id="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </header>
+    {% endblock %}
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    {% block footer %}
+    <footer id="Rodape">
+        <p>&copy; Todos os direitos reservados para Petshop</p>
+        <p>
+            <a href="#" class="link_footer">Política de privacidade </a>|
+            <a href="#" class="link_footer">Termos de uso do website </a>|
+            <a href="#" class="link_footer">Mapa do site</a>
+        </p>
+    </footer>
+    {% endblock %}
+</body>
+
+{% block scripts %}
+
+{% endblock %}
+
+</html>

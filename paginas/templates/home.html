@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="banner">
+    <div class="overlay"></div>
+    <div class="texto-banner">
+        <h1>Sua nova melhor amiga está esperando por você!</h1>
+        <p>Encontre o seu companheiro perfeito para adoção.</p>
+    </div>
+</div>
+<!-- Seção de Destaque de Animais -->
+<div class="sessoes" id="content-animais-destaques">
+    <h2>Animais para Adoção em Destaque</h2>
+    {% for animal in animais_destaques|slice:"8" %}
+    <img src="{{animal.img_animal.url}}" alt="">
+    <p><span class="text-info">Nome</span>: {{ animal.nome }}</p>
+    <p><span class="text-info">Raça</span>: {{ animal.raca }}</p>
+    <p><span class="text-info">Sexo</span>: {{ animal.get_sexo_display }}</p>
+    <p><span class="text-info">Idade</span>: {{ animal.idade }}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}
