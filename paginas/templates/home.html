@@ -20,7 +20,8 @@
     <h2>Animais para Adoção em Destaque</h2>
     {% for animal in animais_destaques|slice:"8" %}
     <img src="{{animal.img_animal.url}}" alt="">
-    <p><span class="text-info">Nome</span>: {{ animal.nome }}</p>
+    <p><span class="text-info">Titulo</span>: {{ animal.titulo }}</p>
+    <p><span class="text-info">Nome</span>: {{ animal.nome_animal }}</p>
     <p><span class="text-info">Raça</span>: {{ animal.raca }}</p>
     <p><span class="text-info">Sexo</span>: {{ animal.get_sexo_display }}</p>
     <p><span class="text-info">Idade</span>: {{ animal.idade }}</p>

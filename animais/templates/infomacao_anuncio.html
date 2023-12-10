@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>Detalhes do Anúncio</title>
+{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/infomacao_anuncio.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="content-anuncio">
+    <div class="info-anuncio">
+        <h1 class="title-anuncio">{{ anuncio_animal.titulo }}</h1>
+        <div class="content-img-anuncio">
+            <img src="{{anuncio_animal.img_animal.url }}" alt="{{ anuncio_animal.titulo }}">
+        </div>
+        <p><span class="campo-info"><i class="fas fa-paw"></i> Nome</span>: {{ anuncio_animal.nome_animal }}</p>
+        <p><span class="campo-info"><i class="fas fa-dog"></i> Raça</span>: {{ anuncio_animal.raca }}</p>
+        <p><span class="campo-info"><i class="fas fa-venus-mars"></i> Sexo</span>: {{ anuncio_animal.get_sexo_display }}
+        </p>
+        <p><span class="campo-info"><i class="fas fa-paw"></i> Animal</span>: {{ anuncio_animal.animal }}</p>
+        <p><span class="campo-info"><i class="far fa-clock"></i> Data da postagem</span>: {{ anuncio_animal.data_criacao }}</p>
+        <div class="sinopse-title-responsive">
+            <h1>{{ anuncio_animal.titulo }}</h1>
+            <p>{{ anuncio_animal.observacao }}</p>
+        </div>
+        <button type="submit"><i class="fas fa-star"></i> Favoritar</button>
+    </div>
+    <div class="sinopse-title">
+        <h1>{{ anuncio_animal.titulo }}</h1>
+        <p>{{ anuncio_animal.observacao }}</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

@@ -27,7 +27,8 @@ class TipoAnimal(models.Model):
 class Animal(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     img_animal = models.ImageField(upload_to='img_animal/', verbose_name='imagem do animal')
-    nome = models.CharField(max_length=50, default='Sem nome')
+    titulo = models.CharField(max_length=200)
+    nome_animal = models.CharField(max_length=50, default='Sem nome')
     raca = models.ForeignKey(RacaAnimal, verbose_name='raça',default='SRD (Sem Raça Definida)', on_delete=models.CASCADE)
     animal = models.ForeignKey(TipoAnimal, verbose_name='Animal', on_delete=models.CASCADE)
     sexo = models.CharField(max_length=1, choices=choices.SEXO_ANIMAL_CHOICES, verbose_name='sexo')
@@ -37,7 +38,7 @@ class Animal(models.Model):
     destaque = models.BooleanField(default=False)
     
     def __str__(self):
-        return f'Nome: {self.nome} - Raça: {self.raca} - Sexo: {self.sexo} - Idade: {self.idade} - Data criação: {self.data_criacao}'
+        return f'Nome: {self.nome_animal} - Raça: {self.raca} - Sexo: {self.sexo} - Idade: {self.idade} - Data criação: {self.data_criacao}'
 
 
 @receiver(pre_delete, sender=Animal)

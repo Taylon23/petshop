@@ -16,36 +16,64 @@
   justify-content: space-evenly;
   padding: 0.5em;
 }
-.content-anuncio a {
-  color: #000;
-}
 .anuncio {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
+  width: 20em;
   text-align: center;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  border: 0.3px solid #e8e8e8;
   gap: 0.5em 0;
   margin: 0.5em 0;
 }
-.anuncio h3 {
-  white-space: nowrap;
+#titulo-anuncio{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.content-img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .anuncio img {
   border-radius: 0.5em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 15em;
+  width: 100%;
   height: 15em;
   object-fit: cover;
-  transition: all 0.3s ease-in-out;
+  transition: all .3s ease;
 }
 .anuncio img:hover {
   transform: scale(1.02);
   filter: brightness(80%);
 }
+#date-create{
+  color: #9a9a9a;
+  font-size: 14px;
+}
+.anuncio button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.9375em 1.5625em;
+  border: none;
+  border-radius: 0.25em;
+  cursor: pointer;
+  font-size: 1.125em;
+  width: 100%;
+  margin: 0.3em 0;
+  transition: all .3s ease;
+}
+
+.anuncio button:hover {
+  opacity: 90%;
+}
 .pagination {
   height: 5em;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -63,12 +91,12 @@
   border-radius: 5px;
   transition: all 0.3s ease;
 }
-.step-links{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
+.step-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .step-links a:hover {

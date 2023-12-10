@@ -1,5 +1,5 @@
 SEXO_ANIMAL_CHOICES = (
-    ('M', 'Masculino'),
-    ('F', 'Feminino'),
+    ('M', 'Macho'),
+    ('F', 'Fêmea'),
     ('N', 'Não especificado'),
 )

@@ -120,20 +120,41 @@ main {
   color: #fff;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0.2em;
+  justify-content: space-between;
+  gap: 1em 0;
+  padding: 0.5em;
 }
+
 #Rodape p {
   margin: 0.5em 0;
   text-align: center;
 }
+
 #Rodape a {
   color: #fff;
   transition: text-decoration 0.3s ease-in;
+  margin: 0 0.5em;
+  text-decoration: none;
 }
+
 #Rodape a:hover {
   text-decoration: underline;
+}
+.rede-social,
+.info-site {
+  text-align: center;
+}
+.rede-social i {
+  font-size: 36px;
+  margin: 0.3em 0;
+}
+.info-site div {
+  margin: .5em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: .5em 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -205,7 +226,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: .5em;
+    margin: 0.5em;
     width: 100%;
   }
   .form-input-topo-responsive input[type="text"] {
@@ -217,5 +238,11 @@ main {
     border-right: transparent;
     padding: 0.5em;
     font-size: 1em;
+  }
+  #Rodape{
+    flex-direction: column;
+  }
+  .info-site div{
+    flex-direction: row;
   }
 }

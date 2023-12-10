@@ -51,10 +51,13 @@ class DeleteAnuncio(DeleteView):
         # Preencher com a instância existente do modelo
         kwargs['instance'] = self.get_object()
         return kwargs
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['object_img_url'] = self.get_object().img_animal.url
         return context
-    
 
+
+def infomacao_anuncio(request, id):
+    animal = get_object_or_404(models.Animal, pk=id)
+    return render(request, 'infomacao_anuncio.html', {'anuncio_animal': animal})
