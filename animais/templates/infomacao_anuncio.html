@@ -24,7 +24,19 @@
             <h1>{{ anuncio_animal.titulo }}</h1>
             <p>{{ anuncio_animal.observacao }}</p>
         </div>
-        <button type="submit"><i class="fas fa-star"></i> Favoritar</button>
+        {% if request.user.is_authenticated %}
+        <form id="favoritar-form" data-animal-id="{{ anuncio_animal.id }}"
+            action="{% url 'favoritar_animal' anuncio_animal.id %}" method="post">
+            {% csrf_token %}
+            <button id="favoritar-btn" type="button">
+                {% if esta_favoritado %}
+                <i class="fas fa-star"></i> Desfavoritar
+                {% else %}
+                <i class="far fa-star"></i> Favoritar
+                {% endif %}
+            </button>
+        </form>
+        {% endif %}
     </div>
     <div class="sinopse-title">
         <h1>{{ anuncio_animal.titulo }}</h1>
@@ -34,5 +46,34 @@
 {% endblock %}
 
 {% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#favoritar-btn').click(function () {
+            const animalId = $('#favoritar-form').data('animal-id');
+            const isFavoritado = $('#favoritar-btn i').hasClass('fas'); // Verifica se está favoritado
+
+            $.ajax({
+                url: `/favoritar-animal/${animalId}/`,
+                type: 'GET',
+                success: function (response) {
+                    if (response.status === 'ok') {
+                        if (isFavoritado) {
+                            $('#favoritar-btn i').removeClass('fas').addClass('far');
+                            $('#favoritar-btn').html('<i class="far fa-star"></i> Favoritar');
+                        } else {
+                            $('#favoritar-btn i').removeClass('far').addClass('fas');
+                            $('#favoritar-btn').html('<i class="fas fa-star"></i> Desfavoritar');
+                        }
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function () {
+                    alert('Erro ao processar a requisição.');
+                }
+            });
+        });
+    });
+</script>
 
 {% endblock %}

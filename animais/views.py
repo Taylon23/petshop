@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from . import models
+from usuarios import models as models_user
 from . import forms
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
@@ -60,4 +61,10 @@ class DeleteAnuncio(DeleteView):
 
 def infomacao_anuncio(request, id):
     animal = get_object_or_404(models.Animal, pk=id)
-    return render(request, 'infomacao_anuncio.html', {'anuncio_animal': animal})
+    esta_favoritado = False  # Inicialmente, assume que não está favoritado
+
+    if request.user.is_authenticated:
+        # Verifica se o animal está na lista de favoritos do usuário logado
+        esta_favoritado = models_user.Favorito.objects.filter(usuario=request.user, animal=animal).exists()
+
+    return render(request, 'infomacao_anuncio.html', {'anuncio_animal': animal, 'esta_favoritado': esta_favoritado})

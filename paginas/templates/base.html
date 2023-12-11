@@ -26,18 +26,19 @@
     {% block navbar %}
     <header>
         <nav class="NavBar">
-            <a href="{% url 'home' %}">
-                <h1>Logomarca</h1>
-            </a>
-            <form action="" method="GET" class="form-input-topo">
-                <input type="text" name="q" id="buscar-animal" placeholder="Pesquisar animais" required>
-                <datalist id="animais">
-                    <option value="sem animal">
-                </datalist>
-                <button type="submit" id="search-button">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
+            <div class="content-logo-input"><a href="{% url 'home' %}">
+                    <h1>Logomarca</h1>
+                </a>
+                <form action="" method="GET" class="form-input-topo">
+                    <input type="text" name="q" id="buscar-animal" placeholder="Pesquisar animais" required>
+                    <datalist id="animais">
+                        <option value="sem animal">
+                    </datalist>
+                    <button type="submit" id="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
             <ul class="ul-menu-topo">
                 <li><a href=""><i class="fas fa-dog"></i> Animais</a>
                     <ul class="submenu-animais">
@@ -50,15 +51,15 @@
                         {% endfor %}
                     </ul>
                 </li>
-                <li><a href=""><i class="fas fa-heart"></i>
-                        Meus pets favoritos</a></li>
-                <li>
+                <li class="menu-link"><a href="{% url 'meus-favoritos' %}"><i class="fas fa-heart"></i>
+                        Favoritos</a></li>
+                <li class="menu-link">
                     <a href="{% url 'adicionar-anuncio' %}" class="adicionar-anuncio">
                         <i class="fas fa-plus-circle"></i>
                         Adicionar Anuncio
                     </a>
                 </li>
-                <li><a href="{% url 'meus-anuncios' %}"><i class="fas fa-newspaper"></i>
+                <li class="menu-link"><a href="{% url 'meus-anuncios' %}"><i class="fas fa-newspaper"></i>
                         Meus anuncios</a></li>
             </ul>
             <ul class="menu-responsive">
@@ -71,7 +72,7 @@
                                 </a>
                             </ul>
                         </li>
-                        <a href="">
+                        <a href="{% url 'meus-favoritos' %}">
                             <li><i class="fas fa-heart"></i> Meus pets favoritos</li>
                         </a>
                         <a href="{% url 'adicionar-anuncio' %}" class="adicionar-anuncio">
@@ -131,7 +132,7 @@
 
     {% endblock %}
 </body>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {% block scripts %}
 
 {% endblock %}

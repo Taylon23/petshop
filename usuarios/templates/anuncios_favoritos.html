@@ -11,18 +11,18 @@
 {% block content %}
 <section class="section-meus-anuncios">
     <div class="title-section">
-        <h1>Meus anúncios</h1>
+        <h1>Meus anúncios favoritos</h1>
     </div>
     <div class="content-anuncio">
         {% for anuncio in page_obj %}
         <div class="anuncio">
             <div class="content-img">
-                <img src="{{ anuncio.img_animal.url }}" alt="{{ anuncio.nome }}">
+                <img src="{{ anuncio.animal.img_animal.url }}" alt="{{ anuncio.animal.nome }}">
             </div>
-            <span id="titulo-anuncio">{{ anuncio.titulo }}</span>
-            <p id="date-create"><i class="far fa-clock"></i>{{ anuncio.data_criacao }}</p>
-            <p id="anuncio-animal">Anuncio de {{ anuncio.animal }}</p>
-            <button><a href="{% url 'infomacao-anuncio' anuncio.pk %}">Ver descrição</a></button>
+            <span id="titulo-anuncio">{{ anuncio.animal.titulo }}</span>
+            <p id="date-create"><i class="far fa-clock"></i>{{ anuncio.animal.data_criacao }}</p>
+            <p id="anuncio-animal">Anuncio de {{ anuncio.animal.animal }}</p>
+            <button><a href="{% url 'infomacao-anuncio' anuncio.animal.pk %}">Ver descrição</a></button>
         </div>
         {% endfor %}
     </div>

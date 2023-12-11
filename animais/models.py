@@ -32,13 +32,13 @@ class Animal(models.Model):
     raca = models.ForeignKey(RacaAnimal, verbose_name='raça',default='SRD (Sem Raça Definida)', on_delete=models.CASCADE)
     animal = models.ForeignKey(TipoAnimal, verbose_name='Animal', on_delete=models.CASCADE)
     sexo = models.CharField(max_length=1, choices=choices.SEXO_ANIMAL_CHOICES, verbose_name='sexo')
-    idade = models.IntegerField()
     data_criacao = models.DateField(auto_now_add=True)
     observacao = models.TextField(default='sem observações')
     destaque = models.BooleanField(default=False)
+    favoritado = models.BooleanField(default=False)
     
     def __str__(self):
-        return f'Nome: {self.nome_animal} - Raça: {self.raca} - Sexo: {self.sexo} - Idade: {self.idade} - Data criação: {self.data_criacao}'
+        return f'Nome: {self.nome_animal} - Raça: {self.raca} - Sexo: {self.sexo} - Data criação: {self.data_criacao}'
 
 
 @receiver(pre_delete, sender=Animal)

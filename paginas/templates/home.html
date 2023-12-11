@@ -16,17 +16,24 @@
     </div>
 </div>
 <!-- Seção de Destaque de Animais -->
-<div class="sessoes" id="content-animais-destaques">
+<section class="sessoes">
     <h2>Animais para Adoção em Destaque</h2>
-    {% for animal in animais_destaques|slice:"8" %}
-    <img src="{{animal.img_animal.url}}" alt="">
-    <p><span class="text-info">Titulo</span>: {{ animal.titulo }}</p>
-    <p><span class="text-info">Nome</span>: {{ animal.nome_animal }}</p>
-    <p><span class="text-info">Raça</span>: {{ animal.raca }}</p>
-    <p><span class="text-info">Sexo</span>: {{ animal.get_sexo_display }}</p>
-    <p><span class="text-info">Idade</span>: {{ animal.idade }}</p>
-    {% endfor %}
-</div>
+    <div id="content-animais-destaques">
+        {% for animal in animais_destaques|slice:"8" %}
+        <div class="content-anuncio">
+            <div class="anuncio">
+                <div class="content-img">
+                    <img src="{{ animal.img_animal.url }}" alt="{{ animal.nome }}">
+                </div>
+                <span id="titulo-anuncio">{{ animal.titulo }}</span>
+                <p id="date-create"><i class="far fa-clock"></i>{{ animal.data_criacao }}</p>
+                <p id="anuncio-animal">Anuncio de {{ animal.animal }}</p>
+                <button><a href="{% url 'infomacao-anuncio' animal.pk %}">Ver descrição</a></button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
 
 {% endblock %}
 
