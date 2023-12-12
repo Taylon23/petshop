@@ -8,7 +8,15 @@
 {% endblock %}
 
 {% block content %}
+<div class="info-atualizar">
+    <h1>Atualizar Anúncio</h1>
+    <p>Você está prestes a atualizar seu anúncio</p>
+</div>
 
+<!-- Exibir a imagem existente -->
+<div class="img_animal_update">
+    <img src="{{ object.img_animal.url }}" alt="Imagem do animal">
+</div>
 <form method="post" enctype="multipart/form-data" class="form-adicionar-animal">
     {% csrf_token %}
 
@@ -43,7 +51,7 @@
         <label for="id_observacao">Observação:</label>
         {{ form.observacao }}
     </div>
-    <button><i class="fas fa-plus"></i> Adiconar</button>
+    <button>Atualizar</button>
 </form>
 {% endblock %}
 

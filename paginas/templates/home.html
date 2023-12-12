@@ -17,7 +17,7 @@
 </div>
 <!-- Seção de Destaque de Animais -->
 <section class="sessoes">
-    <span class="title-secition">Mais Animais Adoráveis</span>
+    <span class="title-secition">Animais para Adoção em Destaque</span>
     <div id="content-animais-destaques">
         {% for animal in animais_destaques|slice:"6" %}
         <div class="content-anuncio">
@@ -36,10 +36,8 @@
 </section>
 <section class="sessoes">
     <div class="content-title-section">
-        <span class="title-secition">Mais Animais Adoráveis</span>
-        <a href="/search-animal/?q=Cachorro">
-            <p><i class="fas fa-plus"></i> Ver mais</p>
-        </a>
+        <span class="title-secition">Sessões Adoráveis de Cachorros</span>
+        <a href="/search-animal/?q=Cachorro"><p><i class="fas fa-plus"></i> Ver mais</p></a>
     </div>
     <div id="content-animais-destaques">
         {% for animal in cachorros|slice:"6" %}
@@ -59,10 +57,8 @@
 </section>
 <section class="sessoes">
     <div class="content-title-section">
-        <span class="title-secition">Mais Animais Adoráveis</span>
-        <a href="/search-animal/?q=Gato">
-            <p><i class="fas fa-plus"></i> Ver mais</p>
-        </a>
+        <span class="title-secition">Descubra o Encanto dos Gatos</span>
+        <a href="/search-animal/?q=Gato"><p><i class="fas fa-plus"></i> Ver mais</p></a>
     </div>
     <div id="content-animais-destaques">
         {% for animal in gatos|slice:"6" %}
@@ -83,9 +79,7 @@
 <section class="sessoes">
     <div class="content-title-section">
         <span class="title-secition">Mais Animais Adoráveis</span>
-        <a href="/search-animal/?q=Outros Animais">
-            <p><i class="fas fa-plus"></i> Ver mais</p>
-        </a>
+        <a href="/search-animal/?q=Outros Animais"><p><i class="fas fa-plus"></i> Ver mais</p></a>
     </div>
     <div id="content-animais-destaques">
         {% for animal in outros_animais|slice:"6" %}

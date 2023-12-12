@@ -21,6 +21,9 @@ main {
   font-weight: bold;
   margin-right: 5px;
 }
+.info-anuncio form{
+  width: 100%;
+}
 .info-anuncio button {
   display: flex;
   align-items: center;
@@ -97,8 +100,14 @@ main {
   .info-anuncio img {
     width: 90%;
   }
+  .info-anuncio button {
+    width: 100%;
+  }
   .sinopse-title-responsive {
     display: block;
     text-align: center;
+  }
+  .sinopse-title-responsive h1{
+    font-size: 1.3em;
   }
 }

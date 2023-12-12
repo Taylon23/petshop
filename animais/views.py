@@ -11,7 +11,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
-class CreateAnuncio(LoginRequiredMixin,CreateView):
+class CreateAnuncio(LoginRequiredMixin, CreateView):
     form_class = forms.AdicinarAnuncio
     template_name = 'form_animal.html'
     success_url = reverse_lazy('meus-anuncios')
@@ -21,9 +21,9 @@ class CreateAnuncio(LoginRequiredMixin,CreateView):
         return super().form_valid(form)
 
 
-class UpdateAnuncio(LoginRequiredMixin,UpdateView):
+class UpdateAnuncio(LoginRequiredMixin, UpdateView):
     form_class = forms.AdicinarAnuncio
-    template_name = 'form_animal.html'
+    template_name = 'form_update_animal.html'
     success_url = reverse_lazy('meus-anuncios')
 
     def form_valid(self, form):
@@ -47,7 +47,7 @@ class UpdateAnuncio(LoginRequiredMixin,UpdateView):
         return context
 
 
-class DeleteAnuncio(LoginRequiredMixin,DeleteView):
+class DeleteAnuncio(LoginRequiredMixin, DeleteView):
     model = models.Animal
     template_name = 'form_delete_animal.html'
     success_url = reverse_lazy('meus-anuncios')
@@ -56,6 +56,7 @@ class DeleteAnuncio(LoginRequiredMixin,DeleteView):
         obj = get_object_or_404(
             models.Animal, pk=self.kwargs['pk'], user=self.request.user)
         return obj
+
 
 def infomacao_anuncio(request, id):
     animal = get_object_or_404(models.Animal, pk=id)
