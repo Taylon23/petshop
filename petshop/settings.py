@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_8x=bl3^r%l^@m(--e($2aw35&3_#(gv9ozbw-hydu9c@abmb*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['Taylon.pythonanywhere.com']
 
 
 # Application definition
@@ -121,11 +121,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+STATIC_ROOT = '/home/projectzone/projectzone/static'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = '/home/projectzone/pptt/media'
 MEDIA_URL = '/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
