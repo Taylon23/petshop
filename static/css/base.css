@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   height: 100%;
   font-family: "Open Sans", sans-serif;
@@ -17,12 +16,18 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  padding: 1em;
+  padding: 0 .5em;
   gap: 1em 0;
-  background-color: #007a7c;
+  background-color:  #007a7c;
 }
 .NavBar h1 {
   color: #fff;
+}
+
+#logo{
+  width: 20em;
+  height: 6.5em;
+  object-fit: cover;
 }
 .content-logo-input {
   width: 100%;
@@ -210,8 +215,14 @@ main {
   .ul-menu-topo {
     display: none;
   }
+  .content-logo-input{
+    width: 50%;
+  }
   #logout{
     display: none;
+  }
+  #logo{
+    width: 15em;
   }
   #logout-mobile{
     color: #000;
@@ -236,7 +247,7 @@ main {
     width: 100%;
     background-color: #fff;
     color: #000;
-    top: 12%;
+    top: 20%;
     right: 0;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -284,7 +295,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0.5em;
+    margin: 0.5em 0;
     width: 100%;
   }
   .form-input-topo-responsive input[type="text"] {

@@ -28,6 +28,8 @@
             <p id="anuncio-animal">Anuncio de {{ anuncio.animal }}</p>
             <button><a href="{% url 'infomacao-anuncio' anuncio.pk %}">Ver descrição</a></button>
         </div>
+        {% empty %}
+        <p>Não há Anúncios</p>
         {% endfor %}
     </div>
 </section>

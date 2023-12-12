@@ -27,7 +27,7 @@
     <header>
         <nav class="NavBar">
             <div class="content-logo-input"><a href="{% url 'home' %}">
-                    <h1>Logomarca</h1>
+                    <img src="{% static 'img/logo.png' %}" alt="" id="logo">
                 </a>
                 <form action="{% url 'search-animal' %}" method="GET" class="form-input-topo">
                     <input type="text" list="animais" name="q" id="buscar-animal" placeholder="Pesquisar animais"
@@ -46,6 +46,7 @@
                 {% endif %}
             </div>
             <ul class="ul-menu-topo">
+                <li class="menu-link"><a href="{% url 'home' %}"><i class="fas fa-home"></i> Principal</a></li>
                 <li><a href=""><i class="fas fa-dog"></i> Animais</a>
                     <ul class="submenu-animais">
                         {% for animal in tipos_animais|dictsort:"tipo_animal" %}
@@ -71,6 +72,9 @@
             <ul class="menu-responsive">
                 <li id="menu-bars"><i class="fas fa-bars"></i>
                     <ul class="submenu-responsive">
+                        <a href="{% url 'home' %}">
+                            <li><i class="fas fa-home"></i> Principal</li>
+                        </a>
                         <li><i class="fas fa-dog"></i> Animais
                             <ul class="submenu-animais">
                                 {% for animal in tipos_animais|dictsort:"tipo_animal" %}
@@ -93,7 +97,8 @@
                                 Adicionar Anuncio</li>
                         </a>
                         {% if request.user.is_authenticated %}
-                        <a href="{% url 'logout' %}" id="logout-mobile"><i class="fas fa-sign-out-alt"></i> Encerra sessão</a>
+                        <a href="{% url 'logout' %}" id="logout-mobile"><i class="fas fa-sign-out-alt"></i> Encerra
+                            sessão</a>
                         {% endif %}
                     </ul>
                 </li>

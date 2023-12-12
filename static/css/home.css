@@ -61,8 +61,12 @@
   font-size: 18px;
 }
 
-.sessoes{
-  padding: 1em;
+.sessoes {
+  padding: 0.3em;
+}
+.title-secition {
+  font-size: 2em;
+  font-weight: bold;
 }
 
 #content-animais-destaques {
@@ -134,20 +138,23 @@
 .anuncio button:hover {
   opacity: 90%;
 }
-.content-title-section{
+.content-title-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.content-title-section a{
+.content-title-section a {
   color: #005859;
 }
-.content-title-section a:hover{
+.content-title-section a:hover {
   text-decoration: underline;
 }
 
-@media (max-width:768px){
-  #content-animais-destaques{
+@media (max-width: 768px) {
+  .title-secition{
+    font-size: 1.2em;
+  }
+  #content-animais-destaques {
     overflow: auto;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -157,8 +164,9 @@
     &::-webkit-scrollbar {
       display: none;
     }
-    .anuncio{
+    .anuncio {
       width: 16em;
+      gap: 5px;
     }
   }
 }
