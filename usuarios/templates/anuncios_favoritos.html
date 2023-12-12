@@ -24,9 +24,13 @@
             <p id="anuncio-animal">Anuncio de {{ anuncio.animal.animal }}</p>
             <button><a href="{% url 'infomacao-anuncio' anuncio.animal.pk %}">Ver descrição</a></button>
         </div>
+        {% empty %}
+        <p>Não há favoritos</p>
         {% endfor %}
     </div>
 </section>
+
+{% if page_obj %}
 <div class="pagination">
     <div class="pagination">
         <div class="step-links">
@@ -44,6 +48,8 @@
         </div>
     </div>
 </div>
+{% endif %}
+
 {% endblock %}
 
 {% block scripts %}

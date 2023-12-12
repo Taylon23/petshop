@@ -8,4 +8,4 @@ class Favorito(models.Model):
     animal = models.ForeignKey(models_animal.Animal, on_delete=models.CASCADE)
     
     def __str__(self):
-        return f'Usuario: {self.usuario} - Animal: {self.animal.titulo}'
+        return f'Usuario: {self.usuario} - Anuncio: {self.animal.titulo}'

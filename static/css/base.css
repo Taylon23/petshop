@@ -46,6 +46,19 @@ body {
   font-size: 1em;
 }
 
+#logout {
+  padding: .3em .5em;
+  font-size: 1.2em;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+  transition: all 0.3s ease;
+}
+#logout:hover {
+  background-color: #bbb;
+}
+
 #search-button {
   height: 2.5em;
   border-radius: 0 0.3em 0.3em 0;
@@ -144,9 +157,10 @@ a {
 main {
   min-height: 80vh;
 }
-
-#Rodape {
+.content-rodape {
   background-color: #007a7c;
+}
+#Rodape {
   color: #fff;
   display: flex;
   align-items: center;
@@ -186,12 +200,23 @@ main {
   flex-direction: column;
   gap: 0.5em 0;
 }
-
+#copyright {
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  font-size: 14px;
+}
 @media screen and (max-width: 768px) {
   .ul-menu-topo {
     display: none;
   }
-  .NavBar{
+  #logout{
+    display: none;
+  }
+  #logout-mobile{
+    color: #000;
+  }
+  .NavBar {
     flex-direction: row;
   }
   .NavBar form {

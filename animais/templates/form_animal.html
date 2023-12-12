@@ -8,8 +8,18 @@
 {% endblock %}
 
 {% block content %}
+<div class="info-atualizar">
+    <h1>Atualizar Anúncio</h1>
+    <p>Você está prestes a atualizar seu anúncio</p>
+</div>
+
+<!-- Exibir a imagem existente -->
+<div class="img_animal_update">
+    <img src="{{ object.img_animal.url }}" alt="Imagem do animal">
+</div>
 <form method="post" enctype="multipart/form-data" class="form-adicionar-animal">
     {% csrf_token %}
+
     <div class="form-group">
         {{ form.img_animal.label_tag }}
         <input type="file" name="img_animal" id="img_animal_input" accept="image/*">
@@ -46,19 +56,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script>
-    // Captura o evento de alteração no campo de entrada de arquivo
-    document.getElementById('img_animal_input').addEventListener('change', function (event) {
-        const input = event.target;
-        if (input.files && input.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                const preview = document.getElementById('img_preview');
-                preview.style.display = 'block';
-                preview.src = e.target.result;
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    });
-</script>
+<script src="{% static 'js/img_preview.js' %}"></script>
 {% endblock %}

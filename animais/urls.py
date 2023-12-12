@@ -7,4 +7,5 @@ urlpatterns = [
     path('atualizar-anuncio/<int:pk>',views.UpdateAnuncio.as_view(),name='atualizar-anuncio'),
     path('deletar-anuncio/<int:pk>',views.DeleteAnuncio.as_view(),name='deletar-anuncio'),
     path('infomacao-anuncio/<int:id>',views.infomacao_anuncio,name='infomacao-anuncio'),
+    path('search-animal/', views.search_animal, name='search-animal'), 
 ]

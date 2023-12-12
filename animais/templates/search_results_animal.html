@@ -1,4 +1,3 @@
-<!-- Seu template meus_anuncios.html -->
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
@@ -11,23 +10,21 @@
 {% block content %}
 <section class="section-meus-anuncios">
     <div class="title-section">
-        <h1>Meus anúncios</h1>
+        <h1>Resultados para {{ query }}</h1>
     </div>
     <div class="content-anuncio">
         {% for anuncio in page_obj %}
         <div class="anuncio">
-            <div class="update-anuncio">
-                <a href="{% url 'deletar-anuncio' anuncio.pk %}"><i class="fas fa-trash" id="trash"></i></a>
-                <a href="{% url 'atualizar-anuncio' anuncio.pk %}"><i class="fas fa-pencil" id="pencil"></i></a>
-            </div>
             <div class="content-img">
-                <img src="{{ anuncio.img_animal.url }}" alt="{{ anuncio.nome }}">
+                <img src="{{ anuncio.img_animal.url }}" alt="{{ anuncio.nome_animal }}">
             </div>
             <span id="titulo-anuncio">{{ anuncio.titulo }}</span>
             <p id="date-create"><i class="far fa-clock"></i>{{ anuncio.data_criacao }}</p>
             <p id="anuncio-animal">Anuncio de {{ anuncio.animal }}</p>
             <button><a href="{% url 'infomacao-anuncio' anuncio.pk %}">Ver descrição</a></button>
         </div>
+        {% empty %}
+        <p>Nenhum resultado encontrado.</p>
         {% endfor %}
     </div>
 </section>

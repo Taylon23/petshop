@@ -134,6 +134,17 @@
 .anuncio button:hover {
   opacity: 90%;
 }
+.content-title-section{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content-title-section a{
+  color: #005859;
+}
+.content-title-section a:hover{
+  text-decoration: underline;
+}
 
 @media (max-width:768px){
   #content-animais-destaques{
