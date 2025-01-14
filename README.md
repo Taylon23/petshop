@@ -1,52 +1,46 @@
-🐾 PetAdote - Plataforma de Adoção de Animais
-PetAdote é um site desenvolvido para facilitar a adoção responsável de animais, com foco em gatos e cachorros, mas também permitindo o anúncio de outros animais. A plataforma conecta pessoas que desejam doar pets a futuros tutores, promovendo o amor e o cuidado pelos animais.
+## 🐾 PetShop
+PetShop é um sistema que permite gerenciar doações de animais, onde os usuários podem publicar anúncios para adoção.
 
-🚀 Funcionalidades
-Anúncio de Animais para Adoção
+## 🚀 Funcionalidades
 
-Usuários podem cadastrar animais disponíveis para adoção, incluindo fotos, descrições e informações importantes.
-Busca de Pets
+- Cadastro de anúncios de animais para adoção
+- Filtros de busca para facilitar a localização de animais
+- Interface amigável e responsiva
 
-Sistema de busca segmentado por tipos de animais (Cachorros, Gatos, Outros).
-Contato Direto
+## 🛠️ Tecnologias Utilizadas
+- Framework: Django
+- Frontend: HTML, CSS, Bootstrap
+- Banco de Dados: SQLite (pode ser configurado - para PostgreSQL ou MySQL)
 
-Usuários interessados podem entrar em contato diretamente com os doadores para combinar a adoção.
-Animais em Destaque
+## Instalação
 
-Exibição de anúncios em destaque na página inicial para maior visibilidade.
-🛠️ Tecnologias Utilizadas
-Backend: **Django**
-Frontend: **HTML, CSS e JavaScript**
-Banco de Dados: **SQLite** (padrão do Django)
-Gerenciamento de Dependências: **requirements.txt**
+Clone o repositorio
 
+```bash
+git clone https://github.com/Taylon23/petshop.git
+cd petshop
 
-Passo a Passo
-Clone o Repositório
+```
+Crie e ative um ambiente virtual:
 
-bash
-git clone https://github.com/seu-usuario/petadote.git
-cd petadote
-Crie e Ative o Ambiente Virtual
+```bash
+python -m venv venv  
+source venv/bin/activate  # Linux/Mac  
+venv\Scripts\activate     # Windows  
 
-bash
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
-Instale as Dependências
+```
+Instale as dependências:
 
-bash
+```bash
 pip install -r requirements.txt
-Execute as Migrações do Banco de Dados
-
-bash
-python manage.py makemigrations
+```
+Aplique as migrações:
+```bash
 python manage.py migrate
-Crie um Superusuário (opcional para gerenciar o site)
-
-bash
-python manage.py createsuperuser
-Execute o Servidor Local
-
-bash
+```
+Inicie o servidor de desenvolvimento:
+```bash
 python manage.py runserver
+
+```
+Acesse o sistema no navegador: http://localhost:8000
